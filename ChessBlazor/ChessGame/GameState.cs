@@ -2,28 +2,34 @@
 
 public class GameState
 {
-    private Board _board;
-    private bool _isWhitesTurn;
-    private bool whiteCanCastleKingSide;
-    private bool whiteCanCastleQueenSide;
-    private bool blackCanCastleKingSide;
-    private bool blackCanCastleQueenSide;
-    private bool isEnPassante;
-    private Point enPassantePoint;
-    private int halfMoves;
-    private int fullMoves;
+    public Board Board;
+    public bool IsWhitesTurn;
+    public bool WhiteCanCastleKingSide;
+    public bool WhiteCanCastleQueenSide;
+    public bool BlackCanCastleKingSide;
+    public bool BlackCanCastleQueenSide;
+    public bool IsEnPassante = false;
+    public Point EnPassantePoint;
+    public int HalfMoves;
+    public int FullMoves;
+    public int IsCheck;
     
     public GameState()
     {
-        _board = new Board(Board.InitialBoardStateFen);
-        _isWhitesTurn = true;
+        Board = new Board(Board.InitialBoardStateFen);
+        IsWhitesTurn = true;
+    }
+
+    public void OtherPlayersTurn()
+    {
+        IsWhitesTurn = !IsWhitesTurn;
     }
     
     public GameState FromFen(string fen)
     {
         var strings = fen.Split(" ");
-        _board = _board.BoardFromFen(strings[0]);
-        _isWhitesTurn = strings[1] == "w";
+        Board = Board.BoardFromFen(strings[0]);
+        IsWhitesTurn = strings[1] == "w";
         
         return this;
     }

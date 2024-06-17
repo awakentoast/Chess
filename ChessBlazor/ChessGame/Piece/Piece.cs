@@ -9,7 +9,7 @@ public abstract class Piece(PieceColour pieceColour, PieceType pieceType)
     public int PieceValue { get; set; } = CalculatePieceValue(pieceType);
     protected bool HasMoved { get; set; } = false;
 
-    public abstract List<Point> GetValidMoves(Board board, Piece piece, Point from);
+    public abstract List<Move> GetValidMoves(GameState gameState, Point from);
 
     public PieceColour GetOtherColour()
     {
@@ -49,6 +49,6 @@ public abstract class Piece(PieceColour pieceColour, PieceType pieceType)
     
     public static Piece Empty()
     {
-        return new Empty();
+        return new EmptyPiece();
     }
 }

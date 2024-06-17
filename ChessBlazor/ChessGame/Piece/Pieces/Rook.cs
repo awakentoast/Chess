@@ -5,28 +5,28 @@ using Chess.ChessGame.Pieces.PieceMovements;
 
 public class Rook(PieceColour pieceColour) : Piece(pieceColour, PieceType.Rook)
 {
-    public override List<Point> GetValidMoves(Board board, Piece piece, Point from)
+    public override List<Move> GetValidMoves(GameState gameState, Point from)
     {
         var possibleMoves = Cardinal.GetAllFieldsInDirections(from, false);
-        var validMoves = new List<Point>();
+        var validMoves = new List<Move>();
             
         foreach (var possibleMovesDirection in possibleMoves)
         {
-            foreach (var move in possibleMovesDirection)
+            foreach (var to in possibleMovesDirection)
             {
-                var target = board.GetField(from).piece;
+                var target = gameState.Board.GetField(from).Piece;
                 if (target.PieceColour != PieceColour.None)
                 {
                     break;
                 }
 
-                if (piece.GetOtherColour() == piece.PieceColour)
+                if (GetOtherColour() == PieceColour)
                 {
-                    validMoves.Add(move);
+                    validMoves.Add(new Move(@from, to, target));
                     break;
                 }
                     
-                validMoves.Add(move);
+                validMoves.Add(new Move(@from, to, target));
             }
         }
 

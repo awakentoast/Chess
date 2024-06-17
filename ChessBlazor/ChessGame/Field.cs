@@ -1,13 +1,7 @@
 ﻿namespace Chess.ChessGame.Pieces;
 
-public class Field
+public class Field(Piece piece, Point point)
 {
-    public Field(Piece piece, Point point)
-    {
-        this.piece = piece;
-        this.point = point;
-    }
-
-    public Piece piece { get; set; }
-    public Point point { get; set; }
+    public Piece Piece { get; set; } = piece;
+    public Point Point { get; set; } = point;
 }

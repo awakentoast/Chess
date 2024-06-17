@@ -1,5 +1,6 @@
 ﻿using Chess.ChessGame;
 using Chess.ChessGame.Pieces;
+using Chess.ChessGame.Pieces.Pieces;
 
 public class Board(string fen)
 {
@@ -24,7 +25,6 @@ public class Board(string fen)
                     {
                         file++;
                         line.Add(new Field(Piece.Empty(), new Point(file, rank)));
-                        
                     }
                 }
                 else
@@ -42,15 +42,27 @@ public class Board(string fen)
         return board;
     }
 
+    
+
+    public List<Field> GetAllFieldsWithPiece(PieceColour pieceColour)
+    {
+        return (from fieldLine in _boardState
+            from field in fieldLine
+            where field.Piece.PieceType != PieceType.Empty
+                  && field.Piece.PieceColour == pieceColour
+            select field).ToList();
+    }
+
     public Board BoardFromFen(string fen)
     {
         BoardStateFromFen(fen);
         return this;
     }
 
-    public void PlacePiece(Piece piece, Point point)
+    public void PlacePiece(Field from, Field to)
     {
-        _boardState[point.Y][point.X].piece = piece;
+        _boardState[to.Point.Y][to.Point.X].Piece = from.Piece;
+        _boardState[to.Point.Y][to.Point.X].Piece = new EmptyPiece();
     }
 
     public Field GetField(Point from)

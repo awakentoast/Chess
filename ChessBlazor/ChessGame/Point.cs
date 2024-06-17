@@ -1,13 +1,7 @@
 ﻿namespace Chess.ChessGame;
 
-public class Point
+public class Point(int x, int y)
 {
-    public Point(int x, int y)
-    {
-        this.X = x;
-        this.Y = y;
-    }
-    
-    public int X { get; }
-    public int Y { get; }
+    public int X { get; } = x;
+    public int Y { get; } = y;
 }
