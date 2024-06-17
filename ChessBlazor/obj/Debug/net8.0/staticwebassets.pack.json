@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\luukb\\source\\repos\\ChessBlazor\\ChessBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChessBlazor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ChessBlazor.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\luukb\\source\\repos\\ChessBlazor\\ChessBlazor\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\luukb\\source\\repos\\ChessBlazor\\ChessBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\luukb\\source\\repos\\ChessBlazor\\ChessBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\luukb\\source\\repos\\ChessBlazor\\ChessBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ChessBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ChessBlazor.props",
+      "PackagePath": "build\\ChessBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ChessBlazor.props",
+      "PackagePath": "buildMultiTargeting\\ChessBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ChessBlazor.props",
+      "PackagePath": "buildTransitive\\ChessBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
